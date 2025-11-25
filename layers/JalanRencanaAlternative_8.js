@@ -1,0 +1,1 @@
+var json_JalanRencanaAlternative_8 = {"type":"FeatureCollection","name":"JalanRencanaAlternative_8","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"id":null},"geometry":{"type":"MultiLineString","coordinates":[[[115.222790424630844,-8.422563972717386],[115.245094273437886,-8.424203766434061]]]}}]}
