@@ -1,11 +1,11 @@
 var size = 0;
 var placement = 'point';
-function categories_PolaRuang_1(feature, value, size, resolution, labelText,
+function categories_Pola_Ruang_Salak_v2_1(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement, textAlign, offsetX, offsetY, overflow, repeat) {
     var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
     switch(valueStr) {
-        case 'Hutan (Jungutan)':
+        case 'Hutan Rimba':
             return [ new ol.style.Style({
         fill: new ol.style.Fill({color: 'rgba(57,125,73,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
@@ -41,9 +41,9 @@ function categories_PolaRuang_1(feature, value, size, resolution, labelText,
     })];
 			break;
 
-        case 'Kolam':
+        case 'Sungai':
             return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(60,78,223,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(191,225,246,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
@@ -59,9 +59,9 @@ function categories_PolaRuang_1(feature, value, size, resolution, labelText,
     })];
 			break;
 
-        case 'Sungai':
+        case 'Kolam':
             return [ new ol.style.Style({
-        fill: new ol.style.Fill({color: 'rgba(191,225,246,1.0)'}),
+        fill: new ol.style.Fill({color: 'rgba(60,78,223,1.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
@@ -87,7 +87,7 @@ function categories_PolaRuang_1(feature, value, size, resolution, labelText,
 			break;
     }};
 
-var style_PolaRuang_1 = function(feature, resolution){
+var style_Pola_Ruang_Salak_v2_1 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -109,7 +109,7 @@ var style_PolaRuang_1 = function(feature, resolution){
         labelText = String("");
     }
     
-    var style = categories_PolaRuang_1(feature, value, size, resolution, labelText,
+    var style = categories_Pola_Ruang_Salak_v2_1(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement, textAlign, offsetX, offsetY, overflow, repeat);
 

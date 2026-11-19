@@ -1,19 +1,10 @@
 var size = 0;
 var placement = 'point';
-function categories_BatasDesaDinas_2(feature, value, size, resolution, labelText,
+function categories_Batas_Desa_Adat_Sibetandesaadatsibetann_5(feature, value, size, resolution, labelText,
                        labelFont, labelFill, bufferColor, bufferWidth,
                        placement, textAlign, offsetX, offsetY, overflow, repeat) {
     var valueStr = (value !== null && value !== undefined) ? value.toString() : 'default';
     switch(valueStr) {
-        case 'Sibetan':
-            return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),fill: new ol.style.Fill({color: 'rgba(90,129,255,0.0)'}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
-    })];
-			break;
-
         case 'Jungutan':
             return [ new ol.style.Style({
         stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),
@@ -23,9 +14,18 @@ function categories_BatasDesaDinas_2(feature, value, size, resolution, labelText
     })];
 			break;
 
+        case 'Sibetan':
+            return [ new ol.style.Style({
+        stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),fill: new ol.style.Fill({color: 'rgba(90,129,255,0.0)'}),
+        text: createTextStyle(feature, resolution, labelText, labelFont,
+                              labelFill, placement, bufferColor,
+                              bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
+    })];
+			break;
+
         case 'Jungutan (Hutan)':
             return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),
+        stroke: new ol.style.Stroke({color: 'rgba(255,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),fill: new ol.style.Fill({color: 'rgba(57,125,73,0.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)
@@ -33,7 +33,7 @@ function categories_BatasDesaDinas_2(feature, value, size, resolution, labelText
 			break;
     }};
 
-var style_BatasDesaDinas_2 = function(feature, resolution){
+var style_Batas_Desa_Adat_Sibetandesaadatsibetann_5 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -55,7 +55,7 @@ var style_BatasDesaDinas_2 = function(feature, resolution){
         labelText = String("");
     }
     
-    var style = categories_BatasDesaDinas_2(feature, value, size, resolution, labelText,
+    var style = categories_Batas_Desa_Adat_Sibetandesaadatsibetann_5(feature, value, size, resolution, labelText,
                           labelFont, labelFill, bufferColor,
                           bufferWidth, placement, textAlign, offsetX, offsetY, overflow, repeat);
 

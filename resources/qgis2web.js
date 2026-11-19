@@ -4,7 +4,7 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        constrainResolution: true,
+        constrainResolution: false,
         maxZoom: 28,
         minZoom: 1,
         
@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([12848366.132252, -945827.922472, 12872185.311829, -931673.285494], map.getSize());
+map.getView().fit([12857450.446041, -945497.506401, 12863103.578826, -932009.760025], map.getSize());
 
 //change cursor
 function pointerOnFeature(evt) {
@@ -939,11 +939,22 @@ let measuring = false;
 //layerswitcher
 
 var layerSwitcher = new ol.control.LayerSwitcher({
-    tipLabel: "Layers",
-    target: 'top-right-container'
-});
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
 map.addControl(layerSwitcher);
-    
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
+
 
 
 
@@ -965,8 +976,7 @@ map.once('rendercomplete', function() {
     var attribHtml = `
     <a href="https://github.com/qgis2web/qgis2web">qgis2web</a> &middot;
     <a href="https://openlayers.org/">OpenLayers</a> &middot;
-    <a href="https://qgis.org/">QGIS</a> &middot;
-    <a href="https://github.com/madeoka">madeoka_</a>`;
+    <a href="https://qgis.org/">QGIS</a>`;
     if (layerAttrs.length > 0) { attribHtml += ' &nbsp;|&nbsp; ' + layerAttrs.join(', '); }
     bottomAttributionUl.innerHTML = '<li>' + attribHtml + '</li>';
   }
